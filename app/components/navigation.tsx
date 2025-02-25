@@ -51,7 +51,6 @@ export function Navigation() {
           <a href="/contact" className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
             Contact Us <span aria-hidden="true">&rarr;</span>
           </a>
-         
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -91,11 +90,8 @@ export function Navigation() {
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="/contact"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Contact Us
+                <a href="/contact" className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                  Contact Us <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </div>
