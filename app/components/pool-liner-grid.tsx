@@ -1,0 +1,275 @@
+"use client"
+
+import Image from 'next/image'
+import { useState } from 'react'
+
+const poolLiners = [
+  {
+    id: 'cirali-beach',
+    name: 'Cirali Beach',
+    description: 'A classic blue pattern that creates a serene, crystal-clear water appearance.',
+    imageUrl: '/assets/patterns/cirali-beach.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'esagono',
+    name: 'Esagono',
+    description: 'Elegant mosaic design with pearlescent finish, perfect for modern pools.',
+    imageUrl: '/assets/patterns/esagono.jpg',
+    collection: 'Mosaic'
+  },
+  {
+    id: 'sandstone',
+    name: 'Sandstone',
+    description: 'Dynamic wave pattern that brings movement and depth to your pool.',
+    imageUrl: '/assets/patterns/sandstone.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'blue-pebble',
+    name: 'Blue Pebble',
+    description: 'Tropical-inspired pattern with aqua tones for a resort-like feel.',
+    imageUrl: '/assets/patterns/blue-pebble.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'raleigh-blue',
+    name: 'Raleigh Blue',
+    description: 'Classic Mediterranean tile pattern for timeless elegance.',
+    imageUrl: '/assets/patterns/raleigh-blue.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'clarkson-blue',
+    name: 'Clarkson Blue',
+    description: 'Natural stone pattern with deep blue tones for a luxurious look.',
+    imageUrl: '/assets/patterns/clarkson-blue.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'white-pebble',
+    name: 'White Pebble',
+    description: 'Clean and bright pebble pattern for a fresh pool appearance.',
+    imageUrl: '/assets/patterns/white-pebble.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'raleigh-grey',
+    name: 'Raleigh Grey',
+    description: 'Sophisticated grey pebble design for a modern aesthetic.',
+    imageUrl: '/assets/patterns/raleigh-grey.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'catalina-sandstone',
+    name: 'Catalina Sandstone',
+    description: 'Warm sandstone texture creating a natural pool environment.',
+    imageUrl: '/assets/patterns/catalina-sandstone.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'ocean-midnight',
+    name: 'Ocean Midnight',
+    description: 'Deep, rich pebble pattern reminiscent of ocean depths.',
+    imageUrl: '/assets/patterns/ocean-midnight.jpg',
+    collection: 'Pebble'
+  },
+  {
+    id: 'lake-tahoe',
+    name: 'Lake Tahoe',
+    description: 'Serene waterscape pattern inspired by mountain lakes.',
+    imageUrl: '/assets/patterns/lake-tahoe.jpg',
+    collection: 'Water Scape'
+  },
+  {
+    id: 'water-street',
+    name: 'Water Street',
+    description: 'Contemporary water pattern with flowing design elements.',
+    imageUrl: '/assets/patterns/water-street.jpg',
+    collection: 'Water Scape'
+  },
+  {
+    id: 'sonata',
+    name: 'Sonata',
+    description: 'Rhythmic water pattern creating visual movement.',
+    imageUrl: '/assets/patterns/sonata.jpg',
+    collection: 'Water Scape'
+  },
+  {
+    id: 'silver-antiqua',
+    name: 'Silver Antiqua',
+    description: 'Classic terrazzo pattern with silver accents.',
+    imageUrl: '/assets/patterns/silver-antigua.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'silver-horizon',
+    name: 'Silver Horizon',
+    description: 'Modern terrazzo design with a silvery finish.',
+    imageUrl: '/assets/patterns/silver-horizon.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'antigua',
+    name: 'Antigua',
+    description: 'Traditional terrazzo pattern with timeless appeal.',
+    imageUrl: '/assets/patterns/antigua.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'caterbury-antigua',
+    name: 'Caterbury Antigua',
+    description: 'Elegant terrazzo design with intricate detailing.',
+    imageUrl: '/assets/patterns/canterbury-antigua.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'blue-horizon',
+    name: 'Blue Horizon',
+    description: 'Stunning blue terrazzo pattern for a bold look.',
+    imageUrl: '/assets/patterns/blue-horizon.jpg',
+    collection: 'Terrazzo'
+  },
+  {
+    id: 'blue-slate',
+    name: 'Blue Slate',
+    description: 'Natural stone pattern with cool blue tones.',
+    imageUrl: '/assets/patterns/blue-slate.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'black-slate',
+    name: 'Black Slate',
+    description: 'Dramatic black slate pattern for sophisticated pools.',
+    imageUrl: '/assets/patterns/black-slate.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'maui',
+    name: 'Maui',
+    description: 'Tropical-inspired natural stone pattern.',
+    imageUrl: '/assets/patterns/maui.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'maui-grey',
+    name: 'Maui Grey',
+    description: 'Subtle grey stone pattern with island charm.',
+    imageUrl: '/assets/patterns/maui-grey.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'carrara-white-marble',
+    name: 'Carrara White Marble',
+    description: 'Luxurious white marble pattern for elegant pools.',
+    imageUrl: '/assets/patterns/carrara-white-marble.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'oxford-blue-marble',
+    name: 'Oxford Blue Marble',
+    description: 'Deep blue marble pattern with classic appeal.',
+    imageUrl: '/assets/patterns/oxford-blue-marble.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'cambridge-blue-marble',
+    name: 'Cambridge Blue Marble',
+    description: 'Refined blue marble design for luxury pools.',
+    imageUrl: '/assets/patterns/cambridge-blue-marble.jpg',
+    collection: 'Natural Stone'
+  },
+  {
+    id: 'butterfly-effect',
+    name: 'Butterfly Effect',
+    description: 'Intricate mosaic pattern with butterfly motifs.',
+    imageUrl: '/assets/patterns/butterfly-effect.jpg',
+    collection: 'Mosaic'
+  },
+  {
+    id: 'silver-lake',
+    name: 'Silver Lake',
+    description: 'Shimmering silver mosaic design for modern pools.',
+    imageUrl: '/assets/patterns/silver-lake.jpg',
+    collection: 'Mosaic'
+  },
+  {
+    id: 'disco',
+    name: 'Disco',
+    description: 'Playful mosaic pattern with dynamic elements.',
+    imageUrl: '/assets/patterns/disco.jpg',
+    collection: 'Mosaic'
+  },
+  {
+    id: 'carnival',
+    name: 'Carnival',
+    description: 'Vibrant mosaic design full of color and life.',
+    imageUrl: '/assets/patterns/carnival.jpg',
+    collection: 'Mosaic'
+  },
+  {
+    id: 'gladstone',
+    name: 'Gladstone',
+    description: 'Elegant mosaic pattern with traditional appeal.',
+    imageUrl: '/assets/patterns/gladstone.jpg',
+    collection: 'Mosaic'
+  },
+]
+
+const collections = ['All', 'Terrazzo', 'Mosaic', 'Pebble', 'Water Scape', 'Natural Stone']
+
+export function PoolLinerGrid() {
+  const [selectedCollection, setSelectedCollection] = useState('All')
+
+  const filteredLiners = selectedCollection === 'All' 
+    ? poolLiners
+    : poolLiners.filter(liner => liner.collection === selectedCollection)
+
+  return (
+    <div className="bg-white py-8 sm:py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:max-w-none">
+          <div className="flex justify-center space-x-4 mb-8">
+            {collections.map((collection) => (
+              <button
+                key={collection}
+                onClick={() => setSelectedCollection(collection)}
+                className={`px-4 py-2 rounded-lg ${
+                  selectedCollection === collection
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {collection}
+              </button>
+            ))}
+          </div>
+          <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredLiners.map((liner) => (
+              <div key={liner.id} className="group relative">
+                <div className="aspect-[3/2] w-full overflow-hidden rounded-lg bg-gray-100">
+                  <Image
+                    src={liner.imageUrl}
+                    alt={liner.name}
+                    width={600}
+                    height={400}
+                    className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {/* <a href={`/products/pool-liners/${liner.id}`}> */}
+                      <span className="absolute inset-0" />
+                      {liner.name}
+                    {/* </a> */}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">{liner.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
