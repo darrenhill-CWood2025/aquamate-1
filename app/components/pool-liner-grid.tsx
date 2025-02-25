@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 type PoolLiner = {
   id: string
@@ -230,20 +230,23 @@ export function PoolLinerGrid() {
   const [selectedCollection, setSelectedCollection] = useState('All')
   const [selectedLiner, setSelectedLiner] = useState<PoolLiner | null>(null)
 
-  const filteredLiners = selectedCollection === 'All' 
-    ? poolLiners
-    : poolLiners.filter(liner => liner.collection === selectedCollection)
+  const filteredLiners = useMemo(() => 
+    selectedCollection === 'All' 
+      ? poolLiners
+      : poolLiners.filter(liner => liner.collection === selectedCollection),
+    [selectedCollection]
+  )
 
   return (
     <div className="bg-white py-8 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
             {collections.map((collection) => (
               <button
                 key={collection}
                 onClick={() => setSelectedCollection(collection)}
-                className={`px-4 py-2 rounded-lg ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base whitespace-nowrap ${
                   selectedCollection === collection
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -253,7 +256,7 @@ export function PoolLinerGrid() {
               </button>
             ))}
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {filteredLiners.map((liner) => (
               <div key={liner.id} className="group relative">
                 <div 
@@ -283,7 +286,7 @@ export function PoolLinerGrid() {
 
       {selectedLiner && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-4xl w-full p-6">
+          <div className="bg-white rounded-lg max-w-4xl w-full p-4 sm:p-6">
             <div className="relative aspect-[4/3] w-full mb-4">
               <Image
                 src={selectedLiner.imageUrl}
@@ -292,11 +295,11 @@ export function PoolLinerGrid() {
                 className="object-contain rounded-lg"
               />
             </div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-2">{selectedLiner.name}</h2>
-            <p className="text-gray-600 mb-4">{selectedLiner.description}</p>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{selectedLiner.name}</h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-4">{selectedLiner.description}</p>
             <button
               onClick={() => setSelectedLiner(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-700"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
