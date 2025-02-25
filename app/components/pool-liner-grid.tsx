@@ -247,13 +247,13 @@ export function PoolLinerGrid() {
           <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {filteredLiners.map((liner) => (
               <div key={liner.id} className="group relative">
-                <div className="aspect-[3/2] w-full overflow-hidden rounded-lg bg-gray-100">
+                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
                   <Image
                     src={liner.imageUrl}
                     alt={liner.name}
                     width={600}
-                    height={400}
-                    className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105"
+                    height={800}
+                    className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="mt-4">
