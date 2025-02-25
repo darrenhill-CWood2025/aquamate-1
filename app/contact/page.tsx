@@ -251,7 +251,7 @@ export default function ContactPage() {
                       : 'bg-blue-600 hover:bg-blue-500'
                   }`}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send message'}
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
