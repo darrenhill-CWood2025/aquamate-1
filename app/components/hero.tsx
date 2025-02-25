@@ -1,8 +1,11 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
 
 export const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false)
+
   return (
     <div className="relative bg-white">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
@@ -13,6 +16,8 @@ export const Hero = () => {
               src="/assets/logo.svg"
               width={400}
               height={44}
+              onLoadingComplete={() => setImageLoaded(true)}
+              className={`transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             />
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -43,13 +48,15 @@ export const Hero = () => {
           </div>
         </div>
         <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+          <div className={`transition-opacity duration-700 ${imageLoaded ? 'opacity-0' : 'opacity-100'} absolute inset-0 bg-gray-200 animate-pulse`} />
           <Image
             alt="Pool with custom liner"
             src="/assets/aquamate-hero.jpg"
             width={2102}
             height={1400}
-            className="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+            className={`aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             priority
+            onLoadingComplete={() => setImageLoaded(true)}
           />
         </div>
       </div>

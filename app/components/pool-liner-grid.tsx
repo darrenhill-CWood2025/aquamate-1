@@ -3,10 +3,18 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
+type PoolLiner = {
+  id: string
+  name: string
+  description: string
+  imageUrl: string
+  collection: string
+}
+
 const poolLiners = [
   {
     id: 'cirali-beach',
-    name: 'Cirali Beach',
+    name: 'Cirali Beach', 
     description: 'A classic blue pattern that creates a serene, crystal-clear water appearance.',
     imageUrl: '/assets/patterns/cirali-beach.jpg',
     collection: 'Terrazzo'
@@ -220,6 +228,7 @@ const collections = ['All', 'Terrazzo', 'Mosaic', 'Pebble', 'Water Scape', 'Natu
 
 export function PoolLinerGrid() {
   const [selectedCollection, setSelectedCollection] = useState('All')
+  const [selectedLiner, setSelectedLiner] = useState<PoolLiner | null>(null)
 
   const filteredLiners = selectedCollection === 'All' 
     ? poolLiners
@@ -247,7 +256,10 @@ export function PoolLinerGrid() {
           <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {filteredLiners.map((liner) => (
               <div key={liner.id} className="group relative">
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                <div 
+                  className="aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer"
+                  onClick={() => setSelectedLiner(liner)}
+                >
                   <Image
                     src={liner.imageUrl}
                     alt={liner.name}
@@ -258,10 +270,8 @@ export function PoolLinerGrid() {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-lg font-semibold text-gray-900">
-                    {/* <a href={`/products/pool-liners/${liner.id}`}> */}
-                      <span className="absolute inset-0" />
-                      {liner.name}
-                    {/* </a> */}
+                    <span className="absolute inset-0" />
+                    {liner.name}
                   </h3>
                   <p className="mt-2 text-sm text-gray-600">{liner.description}</p>
                 </div>
@@ -270,6 +280,31 @@ export function PoolLinerGrid() {
           </div>
         </div>
       </div>
+
+      {selectedLiner && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-4xl w-full p-6">
+            <div className="relative aspect-[4/3] w-full mb-4">
+              <Image
+                src={selectedLiner.imageUrl}
+                alt={selectedLiner.name}
+                fill
+                className="object-contain rounded-lg"
+              />
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2">{selectedLiner.name}</h2>
+            <p className="text-gray-600 mb-4">{selectedLiner.description}</p>
+            <button
+              onClick={() => setSelectedLiner(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
