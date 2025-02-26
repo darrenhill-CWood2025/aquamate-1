@@ -257,7 +257,7 @@ export function PoolLinerGrid() {
                   className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base whitespace-nowrap ${
                     selectedCollection === collection
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-blue-100 text-gray-700 hover:bg-blue-200'
                   }`}
                 >
                   {collection}
@@ -280,7 +280,7 @@ export function PoolLinerGrid() {
                     className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="sm:static sticky top-[72px] z-10 mt-0 p-4 bg-sand-100 rounded-b-lg">
+                <div className="sm:static sticky top-[72px] z-10 mt-0 p-4 bg-blue-50 rounded-b-lg">
                   <h3 className="text-lg font-semibold text-gray-900 line-clamp-1">
                     <span className="absolute inset-0" />
                     {liner.name}
