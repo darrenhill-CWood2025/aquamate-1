@@ -8,19 +8,19 @@ const featuredLiners = [
     id: 'gladstone',
     name: 'Gladstone',
     description: 'Elegant mosaic pattern with traditional appeal.',
-    imageUrl: '/assets/patterns/gladstone.jpg',
+    imageUrl: '/assets/gallery/gladstone/gladstone-0.jpg',
   },
   {
     id: 'silver-lake',
     name: 'Silver Lake',
     description: 'Shimmering silver mosaic design for modern pools.',
-    imageUrl: '/assets/patterns/silver-lake.jpg',
+    imageUrl: '/assets/gallery/silver-lake/silver-lake-0.jpg',
   },
   {
     id: 'esagono',
     name: 'Esagono',
     description: 'Elegant mosaic design with pearlescent finish, perfect for modern pools.',
-    imageUrl: '/assets/patterns/esagono.jpg',
+    imageUrl: '/assets/gallery/esagono/esagono-0.jpg',
   },
 ]
 

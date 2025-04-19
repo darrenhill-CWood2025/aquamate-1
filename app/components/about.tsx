@@ -34,7 +34,7 @@ export function About() {
               <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
                 <Image
                   alt="Pool liner installation"
-                  src="/assets/patterns/blue-horizon.jpg"
+                  src="/assets/gallery/blue-horizon/blue-horizon-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -43,7 +43,7 @@ export function About() {
               <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                 <Image
                   alt="Custom pool liner detail"
-                  src="/assets/patterns/maui.jpg"
+                  src="/assets/gallery/maui/maui-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -52,7 +52,7 @@ export function About() {
               <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
                 <Image
                   alt="Finished pool with new liner"
-                  src="/assets/patterns/silver-lake.jpg"
+                  src="/assets/gallery/silver-lake/silver-lake-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -61,7 +61,7 @@ export function About() {
               <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                 <Image
                   alt="Pool liner fabrication process"
-                  src="/assets/patterns/oxford-blue-marble.jpg"
+                  src="/assets/gallery/oxford-blue-marble/oxford-blue-marble-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"

@@ -1,38 +1,29 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ChevronLeft } from "lucide-react"
 import { notFound } from 'next/navigation'
 import { poolLiners, getPoolLinerById } from '../../../components/pool-liner-data'
 import { RelatedLiners } from '../../../components/related-liners'
-import { Button } from '../../../../components/ui/button'
 import { GalleryImageSlider } from '../../../components/gallery-image-slider'
+import { Button } from '../../../../components/ui/button'
+import Link from 'next/link'
+import { ChevronLeft } from 'lucide-react'
 
-type PageProps = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
-// Generate static params for all pool liners
 export function generateStaticParams() {
   return poolLiners.map((liner) => ({
-    id: liner.id,
+    id: liner.id.toString(),
   }))
 }
 
-export default function PoolLinerPage({ params }: PageProps) {
+export default function Page(props: any) {
+  const { params } = props as { params: { id: string } };
   const liner = getPoolLinerById(params.id)
 
-  if (!liner) {
-    notFound()
-  }
+  if (!liner) notFound()
 
-  // Get related liners from same collection, excluding current liner
   const relatedLiners = poolLiners
-    .filter(l => l.collection === liner.collection && l.id !== liner.id)
+    .filter((l) => l.collection === liner.collection && l.id !== liner.id)
     .slice(0, 4)
 
   return (
-    <div className="container max-w-6xl py-8 space-y-8">
+    <div className="container max-w-6xl py-8 space-y-8 bg-white">
       {/* Back Button */}
       <div>
         <Button
@@ -47,32 +38,30 @@ export default function PoolLinerPage({ params }: PageProps) {
         </Button>
       </div>
 
+      {/* Product Info */}
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Product Description */}
         <div className="space-y-6">
-          <div className="space-y-4">
-            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">{liner.name}</h1>
-            <p className="text-muted-foreground leading-7">{liner.longDescription}</p>
-          </div>
-
-          <div className="space-y-4">
-            <p className="text-muted-foreground">
-              Category:{" "}
-              <Link href={`/products/pool-liners?collection=${liner.collection}`} className="text-blue-600 hover:text-blue-700 hover:underline">
-                {liner.collection}
-              </Link>
-            </p>
-          </div>
+          <h1 className="text-4xl font-bold tracking-tight">{liner.name}</h1>
+          <p className="text-muted-foreground leading-7">{liner.longDescription}</p>
+          <p className="text-muted-foreground">
+            Category:{" "}
+            <Link
+              href={`/products/pool-liners?collection=${liner.collection}`}
+              className="text-blue-600 hover:underline"
+            >
+              {liner.collection}
+            </Link>
+          </p>
         </div>
       </div>
 
-      {/* Gallery Section with Image Slider */}
-      {liner.galleryImages && liner.galleryImages.length > 0 && (
+      {/* Gallery */}
+      {liner.galleryImages?.length > 0 && (
         <GalleryImageSlider images={liner.galleryImages} linerName={liner.name} />
       )}
 
       {/* Related Liners */}
-      <div className="border-t pt-8">
+      <div className="border-t pt-8 mb-12">
         <RelatedLiners currentLiner={liner} limit={4} />
       </div>
     </div>
