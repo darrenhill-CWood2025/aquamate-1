@@ -61,7 +61,6 @@ export function PoolLinerGrid() {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
