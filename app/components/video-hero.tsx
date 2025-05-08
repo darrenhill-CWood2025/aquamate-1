@@ -6,7 +6,7 @@ export function VideoHero() {
       {/* Image Background */}
       <div 
         className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/assets/aquamate-hero.jpg")' }}
+        style={{ backgroundImage: 'url("/assets/gallery/blue-horizon/blue-horizon-1.jpg")' }}
       />
 
       {/* Dark Overlay */}

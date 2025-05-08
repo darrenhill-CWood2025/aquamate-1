@@ -17,10 +17,10 @@ const featuredLiners = [
     imageUrl: '/assets/gallery/silver-lake/silver-lake-0.jpg',
   },
   {
-    id: 'esagono',
-    name: 'Esagono',
-    description: 'Elegant mosaic design with pearlescent finish, perfect for modern pools.',
-    imageUrl: '/assets/gallery/esagono/esagono-0.jpg',
+    id: 'blue-marble',
+    name: 'Blue Marble',
+    description: 'Refined marble design for luxury pools with classic elegance.',
+    imageUrl: '/assets/gallery/blue-marble/blue-marble-0.jpg',
   },
 ]
 

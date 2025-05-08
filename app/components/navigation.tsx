@@ -5,10 +5,18 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+  target?: string;
+  rel?: string;
+}
+
+const navigation: NavigationItem[] = [
   { name: 'Products', href: '/products/pool-liners' },
   { name: 'Our Facility', href: '/our-facility' },
-  { name: 'Warranty', href: '/warranty' },
+  { name: 'Order Forms', href: '/order-forms' },
+  { name: 'Warranty', href: '/assets/warranty/AQUAMATE - WARRANTYCARD CUSTOMER  - MARCH 2025.pdf', target: '_blank', rel: 'noopener noreferrer' },
   { name: 'About Us', href: '/about' },
 ]
 
@@ -42,7 +50,13 @@ export function Navigation() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+            <a 
+              key={item.name} 
+              href={item.href} 
+              className="text-sm/6 font-semibold text-gray-900"
+              target={item.target}
+              rel={item.rel}
+            >
               {item.name}
             </a>
           ))}
@@ -84,6 +98,8 @@ export function Navigation() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    target={item.target}
+                    rel={item.rel}
                   >
                     {item.name}
                   </a>

@@ -139,6 +139,20 @@ export const poolLiners: PoolLiner[] = [
     finishIcon: '/assets/brand/aquafinish-icon.png'
   },
   {
+    id: 'blue-marble',
+    name: 'Blue Marble',
+    shortDescription: 'Refined blue marble design for luxury pools with classic elegance.',
+    longDescription: 'Blue Marble offers a refined marble design in stunning blue tones. This pattern combines the classic elegance of marble with a contemporary color palette for a truly luxurious pool. The premium material includes our exclusive aquafinish protective coating for exceptional chemical resistance and industry-leading UV protection.',
+    imageUrl: '/assets/gallery/blue-marble/blue-marble-0.jpg',
+    galleryImages: [
+      '/assets/gallery/blue-marble/blue-marble-0.jpg'
+    ],
+    collection: 'Natural Stone',
+    features: ['Aquafinish'],
+    finishLogo: '/assets/brand/aquafinish-logo.png',
+    finishIcon: '/assets/brand/aquafinish-icon.png'
+  },
+  {
     id: 'carnival',
     name: 'Carnival',
     shortDescription: 'Vibrant mosaic design full of color and life for a festive pool atmosphere.',
