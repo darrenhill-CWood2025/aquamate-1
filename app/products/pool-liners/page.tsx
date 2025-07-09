@@ -1,4 +1,19 @@
 import { PoolLinerGrid } from '../../components/pool-liner-grid'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pool Liner Patterns - 2025 Collection',
+  description: 'Explore our 2025 collection of premium pool liner patterns. Choose from AquaFinish™, AquaSculpt™, AquaShift™, and AquaShimmer™ designs. Custom sizes available for any pool shape.',
+  keywords: ['pool liner patterns', '2025 pool liners', 'custom pool liners', 'vinyl liner designs', 'AquaFinish', 'AquaSculpt', 'AquaShift', 'AquaShimmer'],
+  openGraph: {
+    title: 'Pool Liner Patterns 2025 - AquaMate Inc.',
+    description: 'Browse our extensive collection of premium pool liner patterns. Custom fabrication for any pool shape or size.',
+    images: ['/assets/gallery-harmony.webp'],
+  },
+  alternates: {
+    canonical: 'https://www.aquamateinc.com/products/pool-liners',
+  },
+}
 
 export default function PoolLinersPage() {
   return (
