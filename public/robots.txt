@@ -1,0 +1,55 @@
+# AquaMate Inc. Robots.txt
+# https://www.aquamateinc.com
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Disallow development and sensitive paths
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.hive-mind/
+Disallow: /.claude/
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /coordination/
+Disallow: /memory/
+Disallow: /logs/
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow access to assets
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.pdf$
+
+# Sitemap location (to be created)
+Sitemap: https://www.aquamateinc.com/sitemap.xml
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
