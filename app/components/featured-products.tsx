@@ -62,7 +62,7 @@ export function FeaturedProducts() {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-lg font-semibold text-gray-900">
-                    <a href={`/products/pool-liners#${liner.id}`}>
+                    <a href={`/products/pool-liners/${liner.id}`}>
                       <span className="absolute inset-0" />
                       {liner.name}
                     </a>
