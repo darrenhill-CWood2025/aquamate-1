@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: ['/assets/contact-us.webp'],
   },
   alternates: {
-    canonical: 'https://www.aquamateinc.com/contact',
+    canonical: 'https://www.aquamatepool.com/contact',
   },
 }
 

@@ -1,3 +1,19 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Warranty Information',
+  description: 'Learn about AquaMate Inc.\'s comprehensive 20-year limited warranty for custom pool liners. Coverage includes manufacturing defects, seam separation, and material deterioration.',
+  keywords: ['pool liner warranty', 'AquaMate warranty', '20 year warranty', 'pool liner guarantee', 'warranty coverage'],
+  openGraph: {
+    title: 'Pool Liner Warranty - 20 Year Coverage | AquaMate Inc.',
+    description: 'Comprehensive 20-year limited warranty coverage for all AquaMate custom pool liners. Peace of mind for your pool investment.',
+    images: ['/assets/aquamate-warranty.webp'],
+  },
+  alternates: {
+    canonical: 'https://www.aquamatepool.com/warranty',
+  },
+}
+
 export default function WarrantyPage() {
   return (
     <div className="bg-white py-24 sm:py-32">

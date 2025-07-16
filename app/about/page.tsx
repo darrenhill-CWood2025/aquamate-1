@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     images: ['/assets/aquamate-facility.jpeg'],
   },
   alternates: {
-    canonical: 'https://www.aquamateinc.com/about',
+    canonical: 'https://www.aquamatepool.com/about',
   },
 }
 

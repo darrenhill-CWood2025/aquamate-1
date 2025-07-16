@@ -1,5 +1,5 @@
 # AquaMate Inc. Robots.txt
-# https://www.aquamateinc.com
+# https://www.aquamatepool.com
 
 # Allow all search engine crawlers
 User-agent: *
@@ -10,6 +10,7 @@ Disallow: /.git/
 Disallow: /.github/
 Disallow: /.hive-mind/
 Disallow: /.claude/
+Disallow: /.swarm/
 Disallow: /api/
 Disallow: /node_modules/
 Disallow: /coordination/
@@ -38,8 +39,8 @@ Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.pdf$
 
-# Sitemap location (to be created)
-Sitemap: https://www.aquamateinc.com/sitemap.xml
+# Sitemap location
+Sitemap: https://www.aquamatepool.com/sitemap.xml
 
 # Block bad bots
 User-agent: AhrefsBot

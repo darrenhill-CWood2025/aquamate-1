@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.aquamateinc.com'
+  const baseUrl = 'https://www.aquamatepool.com'
   
   // Define your static routes
   const staticRoutes = [

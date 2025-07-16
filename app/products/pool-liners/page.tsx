@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: ['/assets/gallery-harmony.webp'],
   },
   alternates: {
-    canonical: 'https://www.aquamateinc.com/products/pool-liners',
+    canonical: 'https://www.aquamatepool.com/products/pool-liners',
   },
 }
 

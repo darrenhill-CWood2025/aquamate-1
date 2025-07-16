@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { StructuredData } from './components/structured-data'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.aquamateinc.com'),
+  metadataBase: new URL('https://www.aquamatepool.com'),
   title: {
     default: 'AquaMate Inc. - Premium Custom Pool Liners | Made in Canada',
     template: '%s | AquaMate Inc.'
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AquaMate Inc. - Premium Custom Pool Liners | Made in Canada',
     description: 'Leading manufacturer of custom pool liners in Collingwood, Ontario. Premium vinyl liners for any pool shape or size.',
-    url: 'https://www.aquamateinc.com',
+    url: 'https://www.aquamatepool.com',
     siteName: 'AquaMate Inc.',
     images: [
       {
@@ -56,11 +56,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.aquamateinc.com',
+    canonical: 'https://www.aquamatepool.com',
   },
   verification: {
-    google: 'verification-token-here',
-    yandex: 'verification-token-here',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
   },
 }
 

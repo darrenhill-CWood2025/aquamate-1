@@ -4,16 +4,16 @@ export function StructuredData() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://www.aquamateinc.com/#organization",
+        "@id": "https://www.aquamatepool.com/#organization",
         "name": "AquaMate Inc.",
-        "url": "https://www.aquamateinc.com",
+        "url": "https://www.aquamatepool.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.aquamateinc.com/logo-aquamate.svg",
+          "url": "https://www.aquamatepool.com/logo-aquamate.svg",
           "width": 512,
           "height": 512
         },
-        "image": "https://www.aquamateinc.com/assets/aquamate-hero.jpg",
+        "image": "https://www.aquamatepool.com/assets/aquamate-hero.jpg",
         "description": "Leading manufacturer of custom pool liners in Collingwood, Ontario. Premium vinyl liners for any pool shape or size.",
         "address": {
           "@type": "PostalAddress",
@@ -21,9 +21,7 @@ export function StructuredData() {
           "addressRegion": "ON",
           "addressCountry": "CA"
         },
-        "sameAs": [
-          // Add your social media URLs here when available
-        ],
+        "sameAs": [],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-705-445-4454",
@@ -34,27 +32,20 @@ export function StructuredData() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.aquamateinc.com/#website",
-        "url": "https://www.aquamateinc.com",
+        "@id": "https://www.aquamatepool.com/#website",
+        "url": "https://www.aquamatepool.com",
         "name": "AquaMate Inc.",
         "description": "Custom pool liner manufacturer - Premium vinyl liners made in Canada",
         "publisher": {
-          "@id": "https://www.aquamateinc.com/#organization"
+          "@id": "https://www.aquamatepool.com/#organization"
         },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://www.aquamateinc.com/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": "en-CA"
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.aquamateinc.com/#localbusiness",
+        "@id": "https://www.aquamatepool.com/#localbusiness",
         "name": "AquaMate Inc.",
-        "image": "https://www.aquamateinc.com/assets/aquamate-hero.jpg",
+        "image": "https://www.aquamatepool.com/assets/aquamate-hero.jpg",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -67,7 +58,7 @@ export function StructuredData() {
           "latitude": 44.5008,
           "longitude": -80.2169
         },
-        "url": "https://www.aquamateinc.com",
+        "url": "https://www.aquamatepool.com",
         "telephone": "+1-705-445-4454",
         "openingHoursSpecification": [
           {
