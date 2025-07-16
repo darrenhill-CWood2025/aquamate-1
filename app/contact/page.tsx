@@ -16,7 +16,7 @@ export default function ContactPage() {
       <div className="lg:absolute lg:inset-0 lg:left-1/2">
         <Image
           alt="Contact Us"
-          src="/assets/patterns/contact-us.png"
+          src="/assets/contact-us.webp"
           fill
           className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
           priority
