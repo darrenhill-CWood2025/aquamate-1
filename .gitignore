@@ -84,7 +84,8 @@ yarn-error.log*
 .vercel
 .env*.local
 
-memory/
-.swarm/
-.hive-mind/
+/memory/
+/.swarm/
+/.hive-mind/
+
 
