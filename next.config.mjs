@@ -14,7 +14,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['www.poolsidebycgt.com'],
+    formats: ['image/webp', 'image/avif'],
   },
   experimental: {
     turbo: {
