@@ -89,3 +89,21 @@ yarn-error.log*
 /.hive-mind/
 
 
+
+# Ruflo local secrets and runtime data
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+
+# Ruflo / claude-flow machine-local runtime state (keep only static config)
+.claude-flow/*
+!.claude-flow/.gitignore
+!.claude-flow/config.yaml
+!.claude-flow/CAPABILITIES.md
+*.pid
+.claude/settings.json.bak-*
+*.tsbuildinfo
+
+# Codex local configuration
+.codex/
