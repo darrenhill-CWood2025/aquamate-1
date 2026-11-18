@@ -30,7 +30,7 @@ export function RelatedLiners({ currentLiner, limit = 3 }: RelatedLinersProps) {
             <div className="aspect-square w-full overflow-hidden rounded-lg">
               <Image
                 src={liner.imageUrl}
-                alt={liner.name}
+                alt={`${liner.name} - ${liner.collection} collection pool liner pattern`}
                 width={400}
                 height={400}
                 className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105"

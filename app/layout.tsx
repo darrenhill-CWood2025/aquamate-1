@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 import { LayoutClient } from './layout-client'
 import { Navigation } from './components/navigation'
 import { ThemeProvider } from "@/components/theme-provider"
@@ -95,6 +95,9 @@ export default function RootLayout({
         
         {/* Theme Color */}
         <meta name="theme-color" content="#317EFB" />
+
+        {/* ARW Verification */}
+        <meta name="arw-verification" content="c224ee29a6b51d277558050807dab953" />
         
         {/* Structured Data */}
         <StructuredData />
@@ -112,6 +115,7 @@ export default function RootLayout({
           </LayoutClient>
           <Analytics />
         </ThemeProvider>
+        <script src="https://api.arw.dev/arw.js" data-site-id="c943cd59-9617-4cc5-9e25-9db1c1a3a8a6" async></script>
       </body>
     </html>
   )

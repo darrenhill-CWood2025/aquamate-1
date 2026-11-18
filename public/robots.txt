@@ -8,14 +8,9 @@ Allow: /
 # Disallow development and sensitive paths
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /.hive-mind/
 Disallow: /.claude/
-Disallow: /.swarm/
 Disallow: /api/
 Disallow: /node_modules/
-Disallow: /coordination/
-Disallow: /memory/
-Disallow: /logs/
 
 # Googlebot specific rules
 User-agent: Googlebot

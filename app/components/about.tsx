@@ -24,17 +24,24 @@ export function About() {
               which is why we specialize in creating perfectly tailored solutions for any pool shape or size.
             </p>
             <p className="mt-8 text-base/7 text-gray-600">
-              Our team combines cutting-edge technology with traditional craftsmanship to ensure every liner we produce meets the 
-              highest standards of quality and durability. We take pride in our attention to detail and our commitment to customer 
+              Our team combines cutting-edge technology with traditional craftsmanship to ensure every liner we produce meets the
+              highest standards of quality and durability. We take pride in our attention to detail and our commitment to customer
               satisfaction, making sure every installation is perfect from start to finish.
+            </p>
+            <h2 className="mt-12 text-pretty text-2xl font-semibold tracking-tight text-gray-900">Proud Partner of Poolside by CGT</h2>
+            <p className="mt-6 text-base/7 text-gray-600">
+              AquaMate is proud to partner with Poolside by CGT, a Canadian vinyl manufacturer that has been in the pool business
+              for over 35 years. Poolside by CGT manufactures premium pool vinyl and is the world&apos;s leading vinyl manufacturer
+              for in-ground pools. All CGT products are manufactured in accordance with ISO 9001:2015, ISO 14001:2018, and
+              ISO 45001:2018, ensuring the highest standards of quality, environmental responsibility, and workplace safety.
             </p>
           </div>
           <div className="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
             <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
               <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
                 <Image
-                  alt="Pool liner installation"
-                  src="/assets/gallery/blue-horizon/blue-horizon-0.jpg"
+                  alt="Caspian pool liner pattern"
+                  src="/assets/gallery/caspian/caspian-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -42,8 +49,8 @@ export function About() {
               </div>
               <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                 <Image
-                  alt="Custom pool liner detail"
-                  src="/assets/gallery/maui/maui-0.jpg"
+                  alt="Antigua Twilight pool liner pattern"
+                  src="/assets/gallery/twilight/twilight-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -51,8 +58,8 @@ export function About() {
               </div>
               <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
                 <Image
-                  alt="Finished pool with new liner"
-                  src="/assets/gallery/silver-lake/silver-lake-0.jpg"
+                  alt="Quartz Garden pool liner pattern"
+                  src="/assets/gallery/quartz-garden/quartz-garden-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
@@ -60,44 +67,14 @@ export function About() {
               </div>
               <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                 <Image
-                  alt="Pool liner fabrication process"
-                  src="/assets/gallery/oxford-blue-marble/oxford-blue-marble-0.jpg"
+                  alt="Maui pool liner pattern"
+                  src="/assets/gallery/maui/maui-0.jpg"
                   width={560}
                   height={560}
                   className="block size-full object-cover"
                 />
               </div>
             </div>
-          </div>
-          <div className="max-lg:mt-16 lg:col-span-1">
-            <p className="text-base/7 font-semibold text-gray-500">Our Impact</p>
-            <hr className="mt-6 border-t border-gray-200" />
-            <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-              <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-                <dt className="text-sm/6 text-gray-600">Years Experience</dt>
-                <dd className="order-first text-6xl font-semibold tracking-tight">
-                  <span>25</span>+
-                </dd>
-              </div>
-              <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-                <dt className="text-sm/6 text-gray-600">Pools Serviced</dt>
-                <dd className="order-first text-6xl font-semibold tracking-tight">
-                  <span>1000</span>+
-                </dd>
-              </div>
-              <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-                <dt className="text-sm/6 text-gray-600">Custom Patterns</dt>
-                <dd className="order-first text-6xl font-semibold tracking-tight">
-                  <span>50</span>+
-                </dd>
-              </div>
-              <div className="flex flex-col gap-y-2">
-                <dt className="text-sm/6 text-gray-600">Satisfaction Rate</dt>
-                <dd className="order-first text-6xl font-semibold tracking-tight">
-                  <span>100</span>%
-                </dd>
-              </div>
-            </dl>
           </div>
         </section>
       </div>

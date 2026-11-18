@@ -17,7 +17,7 @@ const navigation: NavigationItem[] = [
   { name: 'Our Facility', href: '/our-facility' },
   { name: 'Order Forms', href: '/order-forms' },
   { name: 'Warranty', href: '/assets/warranty/AQUAMATE - WARRANTYCARD CUSTOMER  - MARCH 2025.pdf', target: '_blank', rel: 'noopener noreferrer' },
-  { name: 'About us', href: '/about' },
+  { name: 'About Us', href: '/about' },
 ]
 
 export function Navigation() {

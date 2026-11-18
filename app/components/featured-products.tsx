@@ -5,22 +5,22 @@ import { ArrowLongRightIcon } from '@heroicons/react/20/solid'
 
 const featuredLiners = [
   {
-    id: 'gladstone',
-    name: 'Gladstone',
-    description: 'Elegant mosaic pattern with traditional appeal.',
-    imageUrl: '/assets/gallery/gladstone/gladstone-0.jpg',
+    id: 'caspian',
+    name: 'Caspian',
+    description: 'Shimmering mosaic of classic blue stone with golden swirling accents.',
+    imageUrl: '/assets/gallery/caspian/caspian-0.jpg',
   },
   {
-    id: 'silver-lake',
-    name: 'Silver Lake',
-    description: 'Shimmering silver mosaic design for modern pools.',
-    imageUrl: '/assets/gallery/silver-lake/silver-lake-0.jpg',
+    id: 'twilight',
+    name: 'Antigua Twilight',
+    description: 'Bold colour-shifting terrazzo with teal and starlight accents.',
+    imageUrl: '/assets/gallery/twilight/twilight-0.jpg',
   },
   {
-    id: 'blue-marble',
-    name: 'Blue Marble',
-    description: 'Refined marble design for luxury pools with classic elegance.',
-    imageUrl: '/assets/gallery/blue-marble/blue-marble-0.jpg',
+    id: 'quartz-garden',
+    name: 'Quartz Garden',
+    description: 'Calm tropical water colour with airy quartz textures and soft hues.',
+    imageUrl: '/assets/gallery/quartz-garden/quartz-garden-0.jpg',
   },
 ]
 
@@ -54,7 +54,7 @@ export function FeaturedProducts() {
                 <div className="aspect-[3/2] w-full overflow-hidden rounded-lg bg-gray-100">
                   <Image
                     src={liner.imageUrl}
-                    alt={liner.name}
+                    alt={`${liner.name} pool liner pattern by AquaMate`}
                     width={600}
                     height={400}
                     className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105"

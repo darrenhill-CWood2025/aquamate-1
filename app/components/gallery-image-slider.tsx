@@ -32,7 +32,7 @@ export function GalleryImageSlider({ images, linerName }: GalleryImageSliderProp
           <Suspense fallback={<ImageLoader />}>
             <Image
               src={images[activeImage]}
-              alt={`${linerName} gallery image ${activeImage + 1}`}
+              alt={`${linerName} pool liner pattern - image ${activeImage + 1}`}
               width={1200}
               height={800}
               className="w-full h-full object-cover object-top transition-all duration-500 ease-in-out"
@@ -56,7 +56,7 @@ export function GalleryImageSlider({ images, linerName }: GalleryImageSliderProp
             <Suspense fallback={<ImageLoader />}>
               <Image
                 src={image}
-                alt={`${linerName} gallery image ${index + 1}`}
+                alt={`${linerName} pool liner pattern - thumbnail ${index + 1}`}
                 width={200}
                 height={200}
                 className="w-full h-full object-cover"

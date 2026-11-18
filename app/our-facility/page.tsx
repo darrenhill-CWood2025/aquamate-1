@@ -1,4 +1,19 @@
 import Image from 'next/image'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Collingwood Manufacturing Facility',
+  description: 'Tour AquaMate\'s state-of-the-art pool liner manufacturing facility in Collingwood, Ontario. Featuring RF welding technology, quality control labs, custom fabrication equipment, and Pentair Pool distribution.',
+  keywords: ['pool liner manufacturing', 'Collingwood facility', 'RF welding', 'custom pool liner fabrication', 'Pentair Pool distribution'],
+  openGraph: {
+    title: 'Our Manufacturing Facility | AquaMate Inc.',
+    description: 'State-of-the-art pool liner manufacturing in Collingwood, Ontario. Advanced RF welding, quality control, and custom fabrication for every pool shape.',
+    images: ['/assets/aquamate-facility.jpeg'],
+  },
+  alternates: {
+    canonical: 'https://www.aquamatepool.com/our-facility',
+  },
+}
 
 import {
   BeakerIcon,
@@ -27,7 +42,7 @@ const features = [
   },
   {
     name: 'Manufacturing & Distribution Facility',
-    description: 'Our modernfacility in Collingwood houses our entire manufacturing and warehouse operations, including our PENTAIR POOL distribution products.',
+    description: 'Our modern facility in Collingwood houses our entire manufacturing and warehouse operations, including our PENTAIR POOL distribution products.',
     icon: BuildingOfficeIcon,
   },
   {
@@ -42,9 +57,14 @@ const features = [
   },
 ]
 
+const partnerSection = {
+  title: 'Proud Partner of Poolside by CGT',
+  description: 'AquaMate is proud to partner with Poolside by CGT, a Canadian vinyl manufacturer with over 35 years in the pool business. Poolside by CGT is the world\'s leading vinyl manufacturer for in-ground pools. All CGT products are manufactured in accordance with ISO 9001:2015, ISO 14001:2018, and ISO 45001:2018 - ensuring the highest standards of quality, environmental responsibility, and workplace safety.',
+}
+
 export default function FacilityPage() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white pt-24 sm:pt-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-base/7 font-semibold text-blue-600">Manufacturing Excellence</h2>
@@ -80,6 +100,12 @@ export default function FacilityPage() {
             </div>
           ))}
         </dl>
+      </div>
+      <div className="mt-16 bg-blue-600 py-16 sm:mt-20">
+        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+          <h3 className="text-2xl font-semibold tracking-tight text-white">{partnerSection.title}</h3>
+          <p className="mt-6 text-base/7 text-blue-100">{partnerSection.description}</p>
+        </div>
       </div>
     </div>
   )

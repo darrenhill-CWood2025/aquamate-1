@@ -26,11 +26,16 @@ export function VideoHero() {
               href="/products/pool-liners"
               className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
             >
-             View 2025 Collection <span aria-hidden="true">&rarr;</span>
+             View 2026 Collection
             </a>
-            {/* <a href="#services" className="text-sm font-semibold text-white">
-              Learn more <span aria-hidden="true">→</span>
-            </a> */}
+            <a
+              href="/assets/brochure/2026-Aquamate-Digital-Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-[#1e3a5f] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#162d4a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a5f]"
+            >
+              Download Brochure
+            </a>
           </div>
         </div>
       </div>

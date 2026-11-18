@@ -3,15 +3,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
-import { poolLiners, collections } from './pool-liner-data'
+import { collections, getPoolLinersByCollection } from './pool-liner-data'
 
 export function PoolLinerGrid() {
   const [selectedCollection, setSelectedCollection] = useState('All')
 
-  const filteredLiners = useMemo(() => 
-    selectedCollection === 'All' 
-      ? poolLiners
-      : poolLiners.filter(liner => liner.collection === selectedCollection),
+  const filteredLiners = useMemo(() =>
+    getPoolLinersByCollection(selectedCollection),
     [selectedCollection]
   )
 
@@ -40,10 +38,10 @@ export function PoolLinerGrid() {
             {filteredLiners.map((liner) => (
               <div key={liner.id} className="group relative">
                 <Link href={`/products/pool-liners/${liner.id}`}>
-                  <div className="aspect-[3/4.65] w-full overflow-hidden rounded-t-lg bg-gray-100">
+                  <div className="aspect-[3/3] w-full overflow-hidden rounded-t-lg bg-gray-100">
                     <Image
                       src={liner.imageUrl}
-                      alt={liner.name}
+                      alt={`${liner.name} - ${liner.collection} collection pool liner pattern`}
                       width={600}
                       height={920}
                       className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105"

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import { poolLiners, getPoolLinerById } from '../../../components/pool-liner-data'
 import { RelatedLiners } from '../../../components/related-liners'
 import { GalleryImageSlider } from '../../../components/gallery-image-slider'
@@ -12,9 +13,31 @@ export function generateStaticParams() {
   }))
 }
 
-export default function Page(props: any) {
-  const { params } = props as { params: { id: string } };
-  const liner = getPoolLinerById(params.id)
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const liner = getPoolLinerById(id)
+  if (!liner) return {}
+
+  const discontinuedSuffix = liner.discontinued ? ' - While quantities last' : ''
+
+  return {
+    title: `${liner.name} Pool Liner Pattern${discontinuedSuffix}`,
+    description: `${liner.longDescription.slice(0, 155)}...`,
+    keywords: [liner.name, 'pool liner', liner.collection, ...liner.features, 'custom pool liner', 'vinyl pool liner', ...(liner.discontinued ? ['while quantities last', 'discontinued'] : [])],
+    openGraph: {
+      title: `${liner.name} - ${liner.collection} Collection | AquaMate Inc.${discontinuedSuffix}`,
+      description: liner.shortDescription,
+      images: [liner.imageUrl],
+    },
+    alternates: {
+      canonical: `https://www.aquamatepool.com/products/pool-liners/${liner.id}`,
+    },
+  }
+}
+
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const liner = getPoolLinerById(id)
 
   if (!liner) notFound()
 
