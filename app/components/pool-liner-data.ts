@@ -576,8 +576,6 @@ export const poolLiners: PoolLiner[] = [
       '/assets/gallery/silver-horizon/silver-horizon-1.jpg',
       '/assets/gallery/silver-horizon/silver-horizon-2.jpg',
       '/assets/gallery/silver-horizon/silver-horizon-3.jpg',
-      '/assets/gallery/silver-horizon/silver-horizon-4.jpg',
-      '/assets/gallery/silver-horizon/silver-horizon-5.jpg'
     ],
     collection: 'Terrazzo',
     features: ['Aquafinish'],
