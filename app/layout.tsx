@@ -115,7 +115,8 @@ export default function RootLayout({
           </LayoutClient>
           <Analytics />
         </ThemeProvider>
-        <script src="https://api.arw.dev/arw.js" data-site-id="c943cd59-9617-4cc5-9e25-9db1c1a3a8a6" async></script>
+        {/* ARW script disabled for now: api.arw.dev/arw.js is behind a sign-in and does not load for visitors */}
+        {/* <script src="https://api.arw.dev/arw.js" data-site-id="c943cd59-9617-4cc5-9e25-9db1c1a3a8a6" async></script> */}
       </body>
     </html>
   )
