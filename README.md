@@ -76,8 +76,10 @@ Stone and Terrazzo collections).
 
 1. Add an entry to `poolLiners`. The `id` becomes the URL
    (`/products/pool-liners/<id>`).
-2. Put the photos in `public/assets/gallery/<id>/` and reference them in
-   `imageUrl` and `galleryImages`.
+2. Put the photos in `public/assets/gallery/<id>/` as `<id>-0.jpg`,
+   `<id>-1.jpg` and so on, and reference them in `imageUrl` and
+   `galleryImages`. Resize them to 2000px on the long edge first (for
+   example `sips -Z 2000 -s format jpeg -s formatOptions 80 photo.jpg`).
 3. Set `isNew: true` to list it under the "New" tab, `discontinued: true` to
    push it to the end of the listing, and `sortOrder` to position it within
    its collection.
@@ -116,49 +118,24 @@ vercel               # preview deployment
 vercel --prod        # production deployment
 ```
 
-Deploy from a folder that has the real image files on disk. See the next
-section for why a fresh clone is not enough today.
-
 To turn automatic deploys back on, delete the `git` block from `vercel.json`
 and make sure the GitHub repo is connected under the Vercel project's
 Settings → Git.
 
 ## Known issues
 
-### Images and Git LFS
+### Images
 
-This is the main thing to sort out after the transfer.
-
-- 208 images (about 1.15 GB, almost all in `public/assets/gallery/`) are stored
-  in Git LFS, and GitHub currently refuses LFS access for the repo with "This
-  repository exceeded its LFS budget". LFS storage is billed to the account
-  that owns the repo.
-- `.gitattributes` is empty, so a fresh clone checks those images out as small
-  text pointer files, not pictures. A site built from a fresh clone has broken
-  images.
-- `.gitignore` ignores `public/assets/gallery/**/*.jpg` (and `.jpeg`, `.png`),
-  so new gallery photos are skipped by `git add` unless you use `git add -f`.
-- Three new photos exist only on the previous maintainer's machine and are not
-  in the repo: `caspian/caspian-0.jpg`, `twilight/twilight-0.jpg` and
-  `quartz-garden/quartz-garden-0.jpg` under `public/assets/gallery/`.
-- 15 PNGs are pointer files even on that machine, so they are broken on the
-  site: the finish logos and icons in `public/assets/brand/`
-  (aquafinish, aquashimmer, aquashift, aquasculpt), the five icons in
-  `public/assets/icons/`, `public/assets/contact-us.png` and
-  `public/assets/harmony-hero.png`. The originals are needed from the
-  designer or from LFS once access is restored.
-
-The gallery photos are camera originals, up to 8256×5504 and 28 MB each, and
-the site never serves more than 3840px. Resizing them to about 2560px on the
-long edge and removing 36 duplicate files brings the gallery to roughly
-250 MB, which fits in ordinary git with no LFS. The alternative is to buy more
-LFS storage and restore `.gitattributes`.
+All images are stored as ordinary files in git. Git LFS is not used, and a
+fresh clone builds a complete site. The gallery photos were resized to 2000px
+on the long edge (about 150 MB in total). Older commits still contain the
+full-size camera originals, which is why a clone is about 900 MB. Rewriting
+history would shrink it but is optional.
 
 ### Missing files referenced by the code
 
 - `/assets/brand/aquasense-signature-logo.png` and
   `aquasense-signature-icon.png` (Carrara White Marble liner)
-- `/assets/gallery/silver-horizon/silver-horizon-4.jpg` and `-5.jpg`
 - `/assets/aquamate-warranty.webp` (warranty page)
 
 ### Smaller items
@@ -183,13 +160,11 @@ LFS storage and restore `.gitattributes`.
 ## Transfer checklist
 
 - [ ] Transfer the GitHub repo to the new owner (Settings → Danger Zone →
-      Transfer). LFS usage then counts against the new owner's account.
+      Transfer).
 - [ ] Confirm the new owner is an owner of the Aquamate Team on Vercel, and
       reconnect the GitHub repo under the project's Settings → Git if needed.
 - [ ] Hand over, or re-create, the Resend account and set `RESEND_API_KEY` on
       Vercel.
-- [ ] Hand over the folder of real image files, or resolve the LFS issue
-      above first.
 - [ ] Decide whether to keep the ARW script.
 
 ## AI tooling files
