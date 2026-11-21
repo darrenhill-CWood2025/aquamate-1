@@ -37,9 +37,6 @@ yarn-error.log*
 .env*.local
 
 # Media files
-public/assets/gallery/**/*.jpg
-public/assets/gallery/**/*.jpeg
-public/assets/gallery/**/*.png
 public/assets/patterns/**/*.jpg
 public/assets/patterns/**/*.jpeg
 public/assets/patterns/**/*.png
