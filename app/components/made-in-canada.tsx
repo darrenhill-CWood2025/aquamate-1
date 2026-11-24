@@ -36,13 +36,13 @@ export function MadeInCanada() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-red-600">
             <MapleLeaf className="h-5 w-5" />
-            100% Canadian
+            Product of Canada
           </p>
           <h2 id="made-in-canada-heading" className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Made in Canada, from vinyl to box
+            A Product of Canada, from vinyl to box
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            AquaMate is Canadian owned and operated, and everything we offer is produced here at home.
+            AquaMate is 100% Canadian owned and operated. Every material and every step, from the vinyl to the boxes we ship in, is produced right here at home.
           </p>
         </div>
 

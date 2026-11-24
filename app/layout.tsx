@@ -9,7 +9,7 @@ import { StructuredData } from './components/structured-data'
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.aquamatepool.com'),
   title: {
-    default: 'AquaMate Inc. - Premium Custom Pool Liners | Made in Canada',
+    default: 'AquaMate Inc. - Premium Custom Pool Liners | Product of Canada',
     template: '%s | AquaMate Inc.'
   },
   description: 'Leading manufacturer of custom pool liners in Collingwood, Ontario. Premium vinyl liners for any pool shape or size. AquaFinish™, AquaSculpt™, AquaShift™, and AquaShimmer™ collections.',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'AquaMate Inc. - Premium Custom Pool Liners | Made in Canada',
+    title: 'AquaMate Inc. - Premium Custom Pool Liners | Product of Canada',
     description: 'Leading manufacturer of custom pool liners in Collingwood, Ontario. Premium vinyl liners for any pool shape or size.',
     url: 'https://www.aquamatepool.com',
     siteName: 'AquaMate Inc.',
