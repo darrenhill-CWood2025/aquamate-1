@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const discontinuedSuffix = liner.discontinued ? ' - While quantities last' : ''
 
   return {
-    title: `${liner.name} Pool Liner Pattern${discontinuedSuffix}`,
+    title: `${liner.name} Pool Liner Pattern${liner.exclusive ? ' - AquaMate Exclusive' : ''}${discontinuedSuffix}`,
     description: `${liner.longDescription.slice(0, 155)}...`,
     keywords: [liner.name, 'pool liner', liner.collection, ...liner.features, 'custom pool liner', 'vinyl pool liner', ...(liner.discontinued ? ['while quantities last', 'discontinued'] : [])],
     openGraph: {
@@ -64,6 +64,11 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
       {/* Product Info */}
       <div className="flex flex-col md:flex-row gap-8">
         <div className="space-y-6">
+          {liner.exclusive && (
+            <span className="inline-flex rounded-full bg-blue-950 px-3 py-1 text-sm font-semibold text-white">
+              AquaMate Exclusive
+            </span>
+          )}
           <h1 className="text-4xl font-bold tracking-tight">{liner.name}</h1>
           <p className="text-muted-foreground leading-7">{liner.longDescription}</p>
           <p className="text-muted-foreground">

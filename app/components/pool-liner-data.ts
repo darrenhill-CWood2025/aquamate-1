@@ -13,10 +13,32 @@ export type PoolLiner = {
   discontinued?: boolean;
   sortOrder?: number;
   isNew?: boolean;
+  exclusive?: boolean;
 }
 
 export const poolLiners: PoolLiner[] = [
   // ── Mosaic ──────────────────────────────────────────────────────────
+  {
+    id: 'dolomiti',
+    name: 'Dolomiti',
+    shortDescription: 'AquaMate exclusive herringbone glass mosaic in deep blue, charcoal and slate.',
+    longDescription: 'Available only from AquaMate, Dolomiti is a herringbone glass mosaic that layers deep ocean blue, charcoal and slate grey tiles with a pearlescent, hand-glazed sheen. Crisp grey grout lines frame every tile, giving your pool the look of a custom-tiled finish, and once filled the water takes on a rich, deep-blue tone with brilliant sparkle in the sun. Printed by Poolside by CGT exclusively for AquaMate.',
+    imageUrl: '/assets/gallery/dolomiti/dolomiti-0.jpg',
+    galleryImages: [
+      '/assets/gallery/dolomiti/dolomiti-0.jpg',
+      '/assets/gallery/dolomiti/dolomiti-1.jpg',
+      '/assets/gallery/dolomiti/dolomiti-2.jpg',
+      '/assets/gallery/dolomiti/dolomiti-3.jpg',
+      '/assets/gallery/dolomiti/dolomiti-4.jpg'
+    ],
+    collection: 'Mosaic',
+    features: ['Aquafinish'],
+    finishLogo: '/assets/brand/aquafinish-logo.png',
+    finishIcon: '/assets/brand/aquafinish-icon.png',
+    sortOrder: 0,
+    isNew: true,
+    exclusive: true
+  },
   {
     id: 'butterfly-effect',
     name: 'Butterfly Effect',
@@ -125,26 +147,6 @@ export const poolLiners: PoolLiner[] = [
     finishLogo: '/assets/brand/aquafinish-logo.png',
     finishIcon: '/assets/brand/aquafinish-icon.png',
     sortOrder: 6
-  },
-  {
-    id: 'carnival',
-    name: 'Carnival',
-    shortDescription: 'Vibrant mosaic design full of color and life for a festive pool atmosphere. While quantities last.',
-    longDescription: 'Carnival brings a celebration of color to your pool with its vibrant mosaic design. This lively pattern creates a festive atmosphere with its playful blend of bright colors and dynamic visual elements. The premium vinyl material is enhanced with our exclusive aquashimmer technology for added sparkle and exceptional durability. This pattern is being discontinued - available while quantities last.',
-    imageUrl: '/assets/gallery/carnival/carnival-0.jpg',
-    galleryImages: [
-      '/assets/gallery/carnival/carnival-0.jpg',
-      '/assets/gallery/carnival/carnival-1.jpg',
-      '/assets/gallery/carnival/carnival-2.jpg',
-      '/assets/gallery/carnival/carnival-3.jpg',
-      '/assets/gallery/carnival/carnival-4.jpg'
-    ],
-    collection: 'Mosaic',
-    features: ['Aquashimmer'],
-    finishLogo: '/assets/brand/aquashimmer-logo.png',
-    finishIcon: '/assets/brand/aquashimmer-icon.png',
-    discontinued: true,
-    sortOrder: 99
   },
 
   // ── Pebble ──────────────────────────────────────────────────────────
@@ -524,26 +526,6 @@ export const poolLiners: PoolLiner[] = [
     finishLogo: '/assets/brand/aquafinish-logo.png',
     finishIcon: '/assets/brand/aquafinish-icon.png',
     sortOrder: 8
-  },
-  {
-    id: 'carrara-white-marble',
-    name: 'Carrara White Marble',
-    shortDescription: 'Luxurious white marble pattern for elegant pools with timeless appeal. While quantities last.',
-    longDescription: 'A timeless marble design for a luxurious look and feel to your pool. Printed on white liner material with our exclusive aquasense finish for full emboss texture. Engineered with added chemical resistance and industry leading UV protection. The Carrara White Marble pattern brings the elegance of Italian marble to your pool with its distinctive veining and pristine appearance. This pattern is being discontinued - available while quantities last.',
-    imageUrl: '/assets/gallery/carrara-white-marble/carrara-white-marble-0.jpg',
-    galleryImages: [
-      '/assets/gallery/carrara-white-marble/carrara-white-marble-0.jpg',
-      '/assets/gallery/carrara-white-marble/carrara-white-marble-1.jpg',
-      '/assets/gallery/carrara-white-marble/carrara-white-marble-2.jpg',
-      '/assets/gallery/carrara-white-marble/carrara-white-marble-3.jpg',
-      '/assets/gallery/carrara-white-marble/carrara-white-marble-4.jpg'
-    ],
-    collection: 'Natural Stone',
-    features: ['Aquasense Signature'],
-    finishLogo: '/assets/brand/aquasense-signature-logo.png',
-    finishIcon: '/assets/brand/aquasense-signature-icon.png',
-    discontinued: true,
-    sortOrder: 99
   },
 
   // ── Terrazzo ─────────────────────────────────────────────────────────

@@ -1,7 +1,55 @@
 "use client"
 
 import Image from 'next/image'
-import { ArrowLongRightIcon } from '@heroicons/react/20/solid'
+import { ArrowLongRightIcon, SparklesIcon } from '@heroicons/react/20/solid'
+
+function ExclusiveSpotlight() {
+  return (
+    <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900 shadow-xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
+          <Image
+            src="/assets/gallery/dolomiti/dolomiti-1.jpg"
+            alt="Dolomiti pool liner installed in a backyard pool - an AquaMate exclusive"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-6 p-8 sm:p-12">
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-sky-200 ring-1 ring-inset ring-white/20">
+            <SparklesIcon className="h-4 w-4" />
+            AquaMate Exclusive
+          </span>
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Dolomiti</h2>
+          <p className="text-lg leading-8 text-blue-100">
+            A herringbone glass mosaic in deep ocean blue, charcoal and slate grey with a pearlescent sheen.
+            Designed for a custom-tiled look, and available only from AquaMate.
+          </p>
+          <div className="flex items-center gap-4">
+            <div className="relative h-24 w-12 overflow-hidden rounded-md ring-2 ring-white/30">
+              <Image
+                src="/assets/gallery/dolomiti/dolomiti-0.jpg"
+                alt="Dolomiti pattern swatch"
+                fill
+                sizes="48px"
+                className="object-cover"
+              />
+            </div>
+            <a
+              href="/products/pool-liners/dolomiti"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-blue-950 shadow-sm hover:bg-sky-50"
+            >
+              See Dolomiti
+              <ArrowLongRightIcon className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const featuredLiners = [
   {
@@ -29,6 +77,9 @@ export function FeaturedProducts() {
     <div className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
+          <div className="mb-16">
+            <ExclusiveSpotlight />
+          </div>
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Featured Liner Patterns</h2>

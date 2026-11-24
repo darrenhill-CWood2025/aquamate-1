@@ -38,7 +38,12 @@ export function PoolLinerGrid() {
             {filteredLiners.map((liner) => (
               <div key={liner.id} className="group relative">
                 <Link href={`/products/pool-liners/${liner.id}`}>
-                  <div className="aspect-[3/3] w-full overflow-hidden rounded-t-lg bg-gray-100">
+                  <div className="relative aspect-[3/3] w-full overflow-hidden rounded-t-lg bg-gray-100">
+                    {liner.exclusive && (
+                      <span className="absolute left-3 top-3 z-10 rounded-full bg-blue-950/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow">
+                        AquaMate Exclusive
+                      </span>
+                    )}
                     <Image
                       src={liner.imageUrl}
                       alt={`${liner.name} - ${liner.collection} collection pool liner pattern`}
