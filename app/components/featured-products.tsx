@@ -9,8 +9,8 @@ function ExclusiveSpotlight() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
           <Image
-            src="/assets/gallery/dolomiti/dolomiti-1.jpg"
-            alt="Dolomiti pool liner installed in a backyard pool - an AquaMate exclusive"
+            src="/assets/gallery/dolomiti/dolomiti-2.jpg"
+            alt="Dolomiti pool liner on the steps of an installed pool - an AquaMate exclusive"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover object-center"
