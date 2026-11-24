@@ -1,16 +1,5 @@
 import { Layers, Scissors, Package } from 'lucide-react'
 
-function MapleLeaf({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" aria-hidden="true" className={className}>
-      <path
-        fill="currentColor"
-        d="M50,2 L57,16 L64,12.5 L61.5,34 L73,21 L75.5,28 L89,25 L85,38.5 L93,42.5 L70,59 L72.5,67 L52.5,63 L52.5,92 L47.5,92 L47.5,63 L27.5,67 L30,59 L7,42.5 L15,38.5 L11,25 L24.5,28 L27,21 L38.5,34 L36,12.5 L43,16 Z"
-      />
-    </svg>
-  )
-}
-
 const steps = [
   {
     name: 'Canadian vinyl',
@@ -34,8 +23,7 @@ export function MadeInCanada() {
     <section aria-labelledby="made-in-canada-heading" className="border-t border-gray-100 bg-slate-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-red-600">
-            <MapleLeaf className="h-5 w-5" />
+          <p className="text-sm font-semibold uppercase tracking-widest text-red-600">
             Product of Canada
           </p>
           <h2 id="made-in-canada-heading" className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
