@@ -1,4 +1,5 @@
 import { About } from '../components/about'
+import { MadeInCanada } from '../components/made-in-canada'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       <About />
+      <MadeInCanada />
     </div>
   )
 } 
